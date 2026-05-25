@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const reemKufi = Reem_Kufi({ weight: ["400", "500", "600", "700"], subsets: ["latin"], variable: "--font-reem-kufi", display: "swap" });
 
 export const metadata = {
-  title: "BusyGrowth Studio | Performance Marketing Agency",
+  title: "BusyGrowth  | Performance Marketing Agency",
   description: "We help founders scale with Meta Ads, Google Ads & automation.",
   icons: { icon: "/icon.png" },
 };
