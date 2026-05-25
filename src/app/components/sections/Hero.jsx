@@ -50,7 +50,7 @@ export const Hero = () => (
           <div className="h-6 w-px bg-border-light" />
           <div className="text-center"><p className="text-xl font-bold text-cyan-accent">2.4x</p><p className="text-[10px] text-text-light">Avg ROAS</p></div>
           <div className="h-6 w-px bg-border-light" />
-          <div className="text-center"><p className="text-xl font-bold text-emerald-accent">6+</p><p className="text-[10px] text-text-light">Clients</p></div>
+          <div className="text-center"><p className="text-xl font-bold text-emerald-accent">20+</p><p className="text-[10px] text-text-light">Clients</p></div>
         </div>
       </motion.div>
     </motion.div>
