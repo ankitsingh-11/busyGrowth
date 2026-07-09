@@ -14,7 +14,7 @@ export const FounderSection = () => {
       name: "Kanhaiya",
       role: "Co-Founder",
       image: "/images/kanhiya.webp",
-      phone: "+91 93527 57834",
+      phone: "+91 9352757834",
       email: "kanhaiyakumawat139@gmail.com",
     },
   ];
