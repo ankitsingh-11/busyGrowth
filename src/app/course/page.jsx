@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { Chip } from "../components/sections/common";
+import { AnimatedCounter } from "../components/ux/AnimatedCounter";
 
 const milestones = [
   { 
@@ -98,7 +99,14 @@ export default function CoursePage() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
         {[{ v: "20+", l: "Weeks" }, { v: "47+", l: "Sessions" }, { v: "20+", l: "Projects" }, { v: "Lifetime", l: "Access" }].map((s, i) => (
           <div key={i} className="rounded-xl border border-border-light bg-white p-3 text-center shadow-card-soft sm:p-4">
-            <p className="text-xl font-bold text-primary sm:text-2xl">{s.v}</p>
+            <p className="text-xl font-bold text-primary sm:text-2xl">
+              {s.v === "Lifetime" ? "Lifetime" : (
+                <AnimatedCounter
+                  target={parseInt(s.v)}
+                  suffix={s.v.replace(/[0-9]/g, "")}
+                />
+              )}
+            </p>
             <p className="text-[10px] text-text-light sm:text-xs">{s.l}</p>
           </div>
         ))}

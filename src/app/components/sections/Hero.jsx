@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Chip, Metric } from "./common";
+import { AnimatedCounter } from "../ux/AnimatedCounter";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const cardVariant = { hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.2 } } };
@@ -11,7 +12,7 @@ export const Hero = () => (
 
     <motion.div className="w-full max-w-2xl pb-8 lg:w-1/2 lg:pb-0" variants={fadeUp} initial="hidden" animate="visible">
       <Chip variant="gold" className="mb-3 inline-block bg-white/80 backdrop-blur-sm text-xs sm:mb-4 sm:text-sm">
-        ⚡ Jaipur-based performance studio
+        ⚡ Jaipur-based performance team
       </Chip>
 
       <h1 className="mb-3 font-manrope text-2xl font-bold leading-tight text-text-dark sm:mb-4 sm:text-3xl lg:text-4xl xl:text-5xl">
@@ -46,11 +47,11 @@ export const Hero = () => (
 
       <motion.div className="relative mt-6 block lg:hidden" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
         <div className="flex flex-wrap items-center justify-center gap-4 rounded-xl border border-gold/20 bg-white/80 p-4 backdrop-blur-sm">
-          <div className="text-center"><p className="text-xl font-bold text-gold">15+</p><p className="text-[10px] text-text-light">Campaigns</p></div>
+          <div className="text-center"><p className="text-xl font-bold text-gold"><AnimatedCounter target={15} suffix="+" /></p><p className="text-[10px] text-text-light">Campaigns</p></div>
           <div className="h-6 w-px bg-border-light" />
-          <div className="text-center"><p className="text-xl font-bold text-cyan-accent">2.4x</p><p className="text-[10px] text-text-light">Avg ROAS</p></div>
+          <div className="text-center"><p className="text-xl font-bold text-cyan-accent"><AnimatedCounter target={2.4} suffix="x" decimals={1} /></p><p className="text-[10px] text-text-light">Avg ROAS</p></div>
           <div className="h-6 w-px bg-border-light" />
-          <div className="text-center"><p className="text-xl font-bold text-emerald-accent">20+</p><p className="text-[10px] text-text-light">Clients</p></div>
+          <div className="text-center"><p className="text-xl font-bold text-emerald-accent"><AnimatedCounter target={20} suffix="+" /></p><p className="text-[10px] text-text-light">Clients</p></div>
         </div>
       </motion.div>
     </motion.div>
@@ -64,8 +65,12 @@ export const Hero = () => (
           <h3 className="text-lg font-semibold text-text-dark xl:text-xl">Performance hub</h3>
           <p className="text-sm text-text-light mb-4">Real-time dash</p>
           <div className="grid grid-cols-3 gap-y-4 xl:gap-y-6">
-            <Metric label="Leads" value="850+" tone="green" /><Metric label="ROAS" value="2.8x" tone="gold" /><Metric label="CPL" value="-18%" tone="green" />
-            <Metric label="Reply" value="3m 12s" tone="cyan" /><Metric label="Bookings" value="120+" tone="purple" /><Metric label="Reels" value="45+" tone="pink" />
+            <Metric label="Leads" value={<AnimatedCounter target={850} suffix="+" />} tone="green" />
+            <Metric label="ROAS" value="2.8x" tone="gold" />
+            <Metric label="CPL" value="-18%" tone="green" />
+            <Metric label="Reply" value="3m 12s" tone="cyan" />
+            <Metric label="Bookings" value={<AnimatedCounter target={120} suffix="+" />} tone="purple" />
+            <Metric label="Reels" value={<AnimatedCounter target={45} suffix="+" />} tone="pink" />
           </div>
           <p className="mt-4 border-t border-border-light pt-4 text-sm italic text-text-gray">💬 "Scaled from 0 to ₹5L/mo in 3 months"</p>
         </motion.div>

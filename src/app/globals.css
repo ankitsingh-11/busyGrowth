@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, li { color: #334155; }
-a:hover { color: #2563EB; }
+/* a:hover { color: #2563EB; } */
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; height: 8px; }

@@ -79,7 +79,7 @@ const templates = {
               </div>
             </div>
             <div class="footer">
-              BusyGrowth Studio • Jaipur, India<br>
+              BusyGrowth • Jaipur, India<br>
               Lead generated from website contact form
             </div>
           </div>
@@ -103,7 +103,7 @@ Quick Actions:
 
   // Auto-reply to user
   userAutoReply: (formData) => ({
-    subject: '✅ Thanks for reaching out, ' + formData.name.split(' ')[0] + '! | BusyGrowth Studio',
+    subject: '✅ Thanks for reaching out, ' + formData.name.split(' ')[0] + '! | BusyGrowth',
     html: `
       <!DOCTYPE html>
       <html>
@@ -129,12 +129,12 @@ Quick Actions:
         <body>
           <div class="container">
             <div class="logo">
-              <span>BusyGrowth Studio</span>
+              <span>BusyGrowth</span>
             </div>
             <div class="content">
               <h2>Hey ${formData.name.split(' ')[0]}! 👋</h2>
               
-              <p>Thanks for reaching out to BusyGrowth Studio. We've received your request for a <strong>${getInterestLabel(formData.interest)}</strong> and we're excited to learn more about your business.</p>
+              <p>Thanks for reaching out to BusyGrowth. We've received your request for a <strong>${getInterestLabel(formData.interest)}</strong> and we're excited to learn more about your business.</p>
               
               <div class="steps">
                 <div class="step">
@@ -168,14 +168,14 @@ Quick Actions:
               <p>In the meantime, you can:</p>
               <ul>
                 <li>📱 Save our WhatsApp: <strong>+91 93527 57834</strong></li>
-                <li>📧 Email us directly: <a href="mailto:hello@busygrowth.studio" style="color: #0066cc;">hello@busygrowth.studio</a></li>
-                <li>🎓 Check out our <a href="https://busygrowth.studio/course" style="color: #0066cc;">Digital Marketing Course</a></li>
+                <li>📧 Email us directly: <a href="mailto:busygrowth@busygrowth.in" style="color: #0066cc;">busygrowth@busygrowth.in</a></li>
+                <li>🎓 Check out our <a href="https://busygrowth.in/course" style="color: #0066cc;">Digital Marketing Course</a></li>
               </ul>
               
-              <p style="margin-top: 30px;">Talk soon,<br><strong>Team BusyGrowth Studio</strong><br><span style="color: #999;">Jaipur, India</span></p>
+              <p style="margin-top: 30px;">Talk soon,<br><strong>Team BusyGrowth</strong><br><span style="color: #999;">Jaipur, India</span></p>
             </div>
             <div class="footer">
-              © ${new Date().getFullYear()} BusyGrowth Studio. All rights reserved.<br>
+              © ${new Date().getFullYear()} BusyGrowth. All rights reserved.<br>
               You received this email because you submitted a form on our website.
             </div>
           </div>
@@ -197,11 +197,11 @@ Think about: Current numbers, biggest bottlenecks, and 6-12 month goals.
 
 QUICK CONTACTS:
 WhatsApp: +91 93527 57834
-Email: hello@busygrowth.studio
-Course: https://busygrowth.studio/course
+Email: busygrowth@busygrowth.in
+Course: https://busygrowth.in/course
 
 Talk soon,
-Team BusyGrowth Studio
+Team BusyGrowth
 Jaipur, India
     `,
   }),
@@ -212,7 +212,7 @@ function getInterestLabel(interest) {
   const labels = {
     'growth-plan': 'Free Growth Plan (Strategy Call)',
     'ads': 'Meta / Google Ads Management',
-    'content': 'Reels & Content Studio',
+    'content': 'Reels & Content Creation',
     'automation': 'WhatsApp / Email Automation',
     'course': 'Digital Marketing Course',
   };

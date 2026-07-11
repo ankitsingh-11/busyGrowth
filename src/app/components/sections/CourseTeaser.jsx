@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { AnimatedCounter } from "../ux/AnimatedCounter";
 
 const milestoneCards = [
   {
@@ -75,15 +76,15 @@ export const CourseTeaser = () => (
         {/* Stats Grid */}
         <div className="mt-7 grid grid-cols-2 gap-3">
           <div className="rounded-xl border border-cyan/20 bg-gradient-to-br from-cyan/5 to-transparent p-4">
-            <p className="font-display text-2xl font-bold text-cyan">47+</p>
+            <p className="font-display text-2xl font-bold text-cyan"><AnimatedCounter target={47} suffix="+" /></p>
             <p className="text-xs text-text-tertiary">Live Sessions</p>
           </div>
           <div className="rounded-xl border border-emerald/20 bg-gradient-to-br from-emerald/5 to-transparent p-4">
-            <p className="font-display text-2xl font-bold text-emerald">20+</p>
+            <p className="font-display text-2xl font-bold text-emerald"><AnimatedCounter target={20} suffix="+" /></p>
             <p className="text-xs text-text-tertiary">Real Projects</p>
           </div>
           <div className="rounded-xl border border-purple/20 bg-gradient-to-br from-purple/5 to-transparent p-4">
-            <p className="font-display text-2xl font-bold text-purple">5</p>
+            <p className="font-display text-2xl font-bold text-purple"><AnimatedCounter target={5} /></p>
             <p className="text-xs text-text-tertiary">Milestones</p>
           </div>
           <div className="rounded-xl border border-amber/20 bg-gradient-to-br from-amber/5 to-transparent p-4">
@@ -137,7 +138,7 @@ export const CourseTeaser = () => (
               </div>
             </div>
             <p className="mt-3 text-sm font-medium text-text-dark">
-              Join <span className="font-bold text-amber">500+ students</span> who transformed their careers. Next batch starts soon!
+              Join <span className="font-bold text-amber"><AnimatedCounter target={500} suffix="+" /></span> students who transformed their careers. Next batch starts soon!
             </p>
             <Link 
               href="/contact" 

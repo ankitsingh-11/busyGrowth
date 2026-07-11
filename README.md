@@ -2,21 +2,22 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### Development (hot reload — use this while coding)
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Opens <http://localhost:3000>. Every file save is reflected instantly in the browser — no rebuild needed. Uses Turbopack for fast refresh.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Production preview (build first, then serve)
+
+```bash
+npm run build   # compiles the app
+npm start       # serves the compiled output
+```
+
+Use this only to verify the final production bundle. Changes to source files are **not** picked up until you rebuild. This is why edits appear to have no effect when running `npm start` directly — always use `npm run dev` during local development.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

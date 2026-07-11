@@ -226,7 +226,7 @@ export default function ContactPage() {
                   >
                     <option value="growth-plan">Free Growth Plan (Strategy Call)</option>
                     <option value="ads">Meta / Google Ads Management</option>
-                    <option value="content">Reels & Content Studio</option>
+                    <option value="content">Reels & Content Creation</option>
                     <option value="automation">WhatsApp / Email Automation</option>
                     <option value="course">Full DM Course</option>
                     <option value="performance-course">Performance Marketing Course</option>

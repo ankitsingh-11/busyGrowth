@@ -5,8 +5,9 @@ export const Chip = ({ children, variant = "default", className = "" }) => {
     cyan: "border-cyan-accent/30 bg-cyan-50 text-cyan-accent",
     purple: "border-purple-accent/30 bg-purple-50 text-purple-accent",
     pink: "border-pink-accent/30 bg-pink-50 text-pink-accent",
+    emerald: "border-emerald-accent/30 bg-emerald-50 text-emerald-accent",
   };
-  return <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${v[variant]} ${className}`}>{children}</span>;
+  return <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${v[variant] || v.default} ${className}`}>{children}</span>;
 };
 
 export const Metric = ({ label, value, tone = "neutral" }) => {

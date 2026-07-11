@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { AnimatedCounter } from "./ux/AnimatedCounter";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -27,7 +28,7 @@ export const Footer = () => {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-text-gray">
-              Jaipur-based performance studio for founders & creators. 
+              Jaipur-based performance team for founders & creators. 
               We build digital experiences that print leads on autopilot.
             </p>
             
@@ -200,15 +201,21 @@ export const Footer = () => {
           className="my-8 grid grid-cols-4 gap-2 rounded-xl border border-border-light bg-linear-to-br from-slate-50 to-gray-50 p-4 md:my-12 md:gap-4 md:p-6"
         >
           <div className="text-center">
-            <p className="text-xl font-bold text-gold md:text-2xl">80+</p>
+            <p className="text-xl font-bold text-gold md:text-2xl">
+              <AnimatedCounter target={80} suffix="+" />
+            </p>
             <p className="text-[10px] uppercase tracking-wider text-text-light md:text-xs">Campaigns</p>
           </div>
           <div className="text-center border-l border-border-light">
-            <p className="text-xl font-bold text-cyan-accent md:text-2xl">₹1Cr+</p>
+            <p className="text-xl font-bold text-cyan-accent md:text-2xl">
+              ₹<AnimatedCounter target={1} suffix="Cr+" />
+            </p>
             <p className="text-[10px] uppercase tracking-wider text-text-light md:text-xs">Ad Spend</p>
           </div>
           <div className="text-center border-l border-border-light">
-            <p className="text-xl font-bold text-emerald-accent md:text-2xl">3.2x</p>
+            <p className="text-xl font-bold text-emerald-accent md:text-2xl">
+              <AnimatedCounter target={3.2} suffix="x" decimals={1} />
+            </p>
             <p className="text-[10px] uppercase tracking-wider text-text-light md:text-xs">Avg ROAS</p>
           </div>
           <div className="text-center border-l border-border-light">
