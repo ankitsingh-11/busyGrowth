@@ -90,9 +90,92 @@ function buildUserHtml(data) {
       <h2 style="color:#0f172a;margin:0 0 10px;">Hey ${firstName}! 👋</h2>
       <p style="font-size:16px;color:#334155;">Thanks for reaching out! We received your request for <strong style="color:#d4a017;">${getInterestLabel(data.interest)}</strong>.</p>
       <div style="margin:25px 0;">
-        <div style="display:flex;margin-bottom:15px;"><span style="min-width:30px;height:30px;background:#d4a017;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-right:15px;">1</span><div><strong>We'll reach out within 24 hours</strong><br><span style="color:#64748b;font-size:14px;">Expect a WhatsApp message or email from our team.</span></div></div>
-        <div style="display:flex;margin-bottom:15px;"><span style="min-width:30px;height:30px;background:#d4a017;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-right:15px;">2</span><div><strong>30-45 min strategy session</strong><br><span style="color:#64748b;font-size:14px;">We'll audit your digital presence and map out growth levers.</span></div></div>
-        <div style="display:flex;"><span style="min-width:30px;height:30px;background:#d4a017;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-right:15px;">3</span><div><strong>Custom growth roadmap</strong><br><span style="color:#64748b;font-size:14px;">Walk away with a clear plan tailored to your goals.</span></div></div>
+     <div style="display:flex;margin-bottom:15px;">
+  <span
+    style="
+      display:inline-block;
+      width:30px;
+      height:30px;
+      line-height:30px;
+      text-align:center;
+      background:#d4a017;
+      color:#ffffff;
+      border-radius:50%;
+      font-weight:bold;
+      font-size:14px;
+      margin-right:15px;
+      vertical-align:top;
+      flex-shrink:0;
+    "
+  >
+    1
+  </span>
+
+  <div>
+    <strong>We'll reach out within 24 hours</strong><br>
+    <span style="color:#64748b;font-size:14px;">
+      Expect a WhatsApp message or email from our team.
+    </span>
+  </div>
+</div>
+
+<div style="display:flex;margin-bottom:15px;">
+  <span
+    style="
+      display:inline-block;
+      width:30px;
+      height:30px;
+      line-height:30px;
+      text-align:center;
+      background:#d4a017;
+      color:#ffffff;
+      border-radius:50%;
+      font-weight:bold;
+      font-size:14px;
+      margin-right:15px;
+      vertical-align:top;
+      flex-shrink:0;
+    "
+  >
+    2
+  </span>
+
+  <div>
+    <strong>30-45 min strategy session</strong><br>
+    <span style="color:#64748b;font-size:14px;">
+      We'll audit your digital presence and map out growth levers.
+    </span>
+  </div>
+</div>
+
+<div style="display:flex;">
+  <span
+    style="
+      display:inline-block;
+      width:30px;
+      height:30px;
+      line-height:30px;
+      text-align:center;
+      background:#d4a017;
+      color:#ffffff;
+      border-radius:50%;
+      font-weight:bold;
+      font-size:14px;
+      margin-right:15px;
+      vertical-align:top;
+      flex-shrink:0;
+    "
+  >
+    3
+  </span>
+
+  <div>
+    <strong>Custom growth roadmap</strong><br>
+    <span style="color:#64748b;font-size:14px;">
+      Walk away with a clear plan tailored to your goals.
+    </span>
+  </div>
+</div>
       </div>
       <div style="background:#f8fafc;border-radius:12px;padding:20px;margin-top:20px;">
         <p style="margin:0 0 10px;font-weight:600;">📞 Save our contact</p>
@@ -122,7 +205,7 @@ WHAT HAPPENS NEXT:
 
 QUICK CONTACTS:
 WhatsApp: +91 93527 57834
-Email: busygrowth@busygrowth.in
+Email: ankitsinghlakhnot@gmail.com
 
 Talk soon,
 Team BusyGrowth
@@ -131,79 +214,47 @@ Jaipur, India`;
 
 // ─── Email senders ────────────────────────────────────────────────────────────
 
-async function sendViaResend(data) {
-  const { Resend } = await import('resend');
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
-  const fromEmail = process.env.CONTACT_FROM_EMAIL || 'BusyGrowth <onboarding@resend.dev>';
-  const toEmails  = (process.env.CONTACT_TO_EMAIL || process.env.EMAIL_TO || '').split(',').map(e => e.trim()).filter(Boolean);
-
-  if (toEmails.length === 0) {
-    throw new Error('No recipient email configured. Set CONTACT_TO_EMAIL.');
-  }
-
-  // Admin notification
-  await resend.emails.send({
-    from: fromEmail,
-    to: toEmails,
-    subject: `🎯 New Lead: ${data.name} — ${getBusinessLabel(data.businessType)}`,
-    html: buildAdminHtml(data),
-    text: buildAdminText(data),
-  });
-
-  // User auto-reply
-  await resend.emails.send({
-    from: fromEmail,
-    to: [data.email],
-    subject: `✅ Got your request, ${data.name.split(' ')[0]}! | BusyGrowth`,
-    html: buildUserHtml(data),
-    text: buildUserText(data),
-  });
-}
 
 async function sendViaSMTP(data) {
-  const nodemailer = await import('nodemailer');
+  const nodemailer = await import("nodemailer");
 
-  const host = process.env.SMTP_HOST || process.env.EMAIL_HOST;
-  const port = parseInt(process.env.SMTP_PORT || process.env.EMAIL_PORT || '587', 10);
-  const user = process.env.SMTP_USER || process.env.EMAIL_USER;
-  const pass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
-  // NOTE: Gmail requires an App Password — not your normal Gmail password.
-  // Generate one at: https://myaccount.google.com/apppasswords
-
-  if (!host || !user || !pass) {
-    throw new Error('SMTP not configured. Set SMTP_HOST, SMTP_USER, SMTP_PASS (or RESEND_API_KEY).');
-  }
-
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
+  const transporter = nodemailer.default.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: Number(process.env.EMAIL_PORT),
+    secure: false,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
   });
 
+  // Verify SMTP connection
   await transporter.verify();
+  console.log("✅ SMTP Connected");
 
-  const from       = `"BusyGrowth Leads" <${user}>`;
-  const recipients = (process.env.CONTACT_TO_EMAIL || process.env.EMAIL_TO || user).split(',').map(e => e.trim()).join(',');
+  const recipients = process.env.EMAIL_TO
+    .split(",")
+    .map((e) => e.trim());
 
-  // Admin notification
+  // Admin Mail
   await transporter.sendMail({
-    from,
+    from: `"BusyGrowth Leads" <${process.env.EMAIL_USER}>`,
     to: recipients,
-    subject: `🎯 New Lead: ${data.name} — ${getBusinessLabel(data.businessType)}`,
+    subject: `🎯 New Lead: ${data.name}`,
     html: buildAdminHtml(data),
     text: buildAdminText(data),
   });
 
-  // User auto-reply
+  // Auto Reply
   await transporter.sendMail({
-    from: `"BusyGrowth" <${user}>`,
+    from: `"BusyGrowth" <${process.env.EMAIL_USER}>`,
     to: data.email,
-    subject: `✅ Got your request, ${data.name.split(' ')[0]}! | BusyGrowth`,
+    subject: `✅ We received your request | BusyGrowth`,
     html: buildUserHtml(data),
     text: buildUserText(data),
   });
+
+  console.log("✅ Emails Sent Successfully");
 }
 
 // ─── Route handler ────────────────────────────────────────────────────────────
@@ -240,12 +291,9 @@ export async function POST(request) {
       message:      (body.message      || '').trim(),
     };
 
-    // Send via Resend if key available, otherwise SMTP
-    if (process.env.RESEND_API_KEY) {
-      await sendViaResend(data);
-    } else {
-      await sendViaSMTP(data);
-    }
+    
+  // Always use Nodemailer SMTP
+await sendViaSMTP(data);
 
     return Response.json(
       { success: true, message: "Thank you! We'll get back within 24 hours." },

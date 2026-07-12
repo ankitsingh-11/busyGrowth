@@ -47,11 +47,11 @@ export const Hero = () => (
 
       <motion.div className="relative mt-6 block lg:hidden" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
         <div className="flex flex-wrap items-center justify-center gap-4 rounded-xl border border-gold/20 bg-white/80 p-4 backdrop-blur-sm">
-          <div className="text-center"><p className="text-xl font-bold text-gold"><AnimatedCounter target={15} suffix="+" /></p><p className="text-[10px] text-text-light">Campaigns</p></div>
+          <div className="text-center"><p className="text-xl font-bold text-gold"><AnimatedCounter target={80} suffix="+" /></p><p className="text-[10px] text-text-light">Campaigns</p></div>
           <div className="h-6 w-px bg-border-light" />
           <div className="text-center"><p className="text-xl font-bold text-cyan-accent"><AnimatedCounter target={2.4} suffix="x" decimals={1} /></p><p className="text-[10px] text-text-light">Avg ROAS</p></div>
           <div className="h-6 w-px bg-border-light" />
-          <div className="text-center"><p className="text-xl font-bold text-emerald-accent"><AnimatedCounter target={20} suffix="+" /></p><p className="text-[10px] text-text-light">Clients</p></div>
+          <div className="text-center"><p className="text-xl font-bold text-emerald-accent"><AnimatedCounter target={100} suffix="+" /></p><p className="text-[10px] text-text-light">Clients</p></div>
         </div>
       </motion.div>
     </motion.div>
@@ -74,13 +74,91 @@ export const Hero = () => (
           </div>
           <p className="mt-4 border-t border-border-light pt-4 text-sm italic text-text-gray">💬 "Scaled from 0 to ₹5L/mo in 3 months"</p>
         </motion.div>
-        <motion.div whileHover={{ y: -5 }} className="w-4/5 self-start rounded-2xl border border-emerald-accent/20 bg-white/90 p-4 shadow-card-soft">
-          <p className="mb-3 text-xs font-medium uppercase text-emerald-accent">💬 WhatsApp leads</p>
-          <div className="space-y-3">
-            <div className="flex gap-3"><div className="h-8 w-8 rounded-full bg-gradient-to-br from-gold to-orange-accent" /><div className="rounded-2xl bg-bg-gray/80 p-3"><p className="text-xs text-text-dark">Course details</p><p className="text-[10px] text-text-muted">Just now</p></div></div>
-            <div className="flex gap-3"><div className="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-accent to-purple-accent" /><div className="rounded-2xl bg-bg-gray/80 p-3"><p className="text-xs text-text-dark">Ad management</p><p className="text-[10px] text-text-muted">2m ago</p></div></div>
-          </div>
-        </motion.div>
+      <motion.div
+  whileHover={{ y: -8, scale: 1.02 }}
+  transition={{ duration: 0.3 }}
+  className="w-[85%] self-start rounded-3xl border border-emerald-200/40 bg-white/90 backdrop-blur-xl shadow-2xl overflow-hidden"
+>
+  {/* Header */}
+  <div className="flex items-center justify-between border-b border-gray-100 bg-gradient-to-r from-emerald-500 to-green-400 px-4 py-3">
+    <div className="flex items-center gap-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg">
+        💬
+      </div>
+
+      <div>
+        <h4 className="text-sm font-semibold text-white">
+          WhatsApp Leads
+        </h4>
+        <p className="text-[11px] text-white/80">
+          Live Conversations
+        </p>
+      </div>
+    </div>
+
+    <span className="h-2.5 w-2.5 rounded-full bg-white animate-pulse" />
+  </div>
+
+  {/* Chats */}
+  <div className="space-y-4 p-4">
+
+    {/* Chat 1 */}
+    <div className="flex items-start gap-3">
+      <img
+        src="https://i.pravatar.cc/100?img=12"
+        className="h-10 w-10 rounded-full"
+      />
+
+      <div className="rounded-2xl bg-gray-100 px-4 py-3">
+        <p className="text-sm font-medium text-gray-900">
+          Hi 👋
+        </p>
+
+        <p className="mt-1 text-xs text-gray-500">
+          Need Meta Ads for my business.
+        </p>
+
+        <span className="mt-2 block text-[10px] text-gray-400">
+          Just now
+        </span>
+      </div>
+    </div>
+
+    {/* Chat 2 */}
+    <div className="flex items-start gap-3">
+      <img
+        src="https://i.pravatar.cc/100?img=32"
+        className="h-10 w-10 rounded-full"
+      />
+
+      <div className="rounded-2xl bg-emerald-50 px-4 py-3">
+        <p className="text-sm font-medium text-gray-900">
+          Hello 👋
+        </p>
+
+        <p className="mt-1 text-xs text-gray-500">
+          I want Google Ads management.
+        </p>
+
+        <span className="mt-2 block text-[10px] text-gray-400">
+          2 min ago
+        </span>
+      </div>
+    </div>
+
+    {/* Typing */}
+    <div className="flex items-center gap-2 pl-2">
+      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-bounce"></span>
+      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-bounce [animation-delay:150ms]"></span>
+      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-bounce [animation-delay:300ms]"></span>
+
+      <span className="text-xs text-gray-400">
+        typing...
+      </span>
+    </div>
+
+  </div>
+</motion.div>
       </div>
     </div>
   </section>

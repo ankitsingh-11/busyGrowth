@@ -11,7 +11,7 @@ export const Footer = () => {
       {/* Top Gradient Line */}
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-gold/30 to-transparent" />
       
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           
           {/* Column 1: Brand + Social Links */}
@@ -224,24 +224,12 @@ export const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-border-light pt-6 text-center md:flex-row md:text-left">
-          <p className="text-xs text-text-light md:text-sm">
-            © {currentYear} BusyGrowth. All rights reserved.
-          </p>
-          
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs md:gap-6 md:text-sm">
-            <span className="text-text-light transition hover:text-gold">Privacy</span>
-            <span className="text-border-light">|</span>
-            <span className="text-text-light transition hover:text-gold">Terms</span>
-            <span className="text-border-light">|</span>
-            <span className="text-text-light transition hover:text-gold">Refund</span>
-          </div>
-
-          <p className="text-xs text-text-light md:text-sm">
-            Made with <span className="text-red-400">❤️</span> in Jaipur
-          </p>
-        </div>
+       {/* Bottom Bar */}
+<div className="border-t border-border-light pt-6 pb-2 text-center">
+  <p className="text-xs text-text-light sm:text-sm">
+    © {currentYear} BusyGrowth. All rights reserved.
+  </p>
+</div>
       </div>
     </footer>
   );
