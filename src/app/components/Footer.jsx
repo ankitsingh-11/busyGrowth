@@ -76,9 +76,6 @@ export const Footer = () => {
             
             {/* Mobile-only contact */}
             <div className="flex gap-4 pt-2 sm:hidden">
-              <a href="mailto:busygrowth@busygrowth.in" className="text-sm text-cyan-accent">
-                📧 busygrowth@busygrowth.in
-              </a>
               <a href="https://wa.me/919352757834" className="text-sm text-emerald-accent">
                 📱 WhatsApp
               </a>
@@ -158,22 +155,6 @@ export const Footer = () => {
                 </div>
               </a>
 
-              <a
-                href="mailto:busygrowth@busygrowth.in"
-                className="group flex items-center gap-3 rounded-xl border border-cyan-accent/20 bg-linear-to-br from-cyan-accent/5 to-cyan-accent/10 p-3 transition-all hover:from-cyan-accent/10 hover:to-cyan-accent/20"
-              >
-                <div className="rounded-full bg-cyan-accent/20 p-2 text-cyan-accent">
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs text-text-light">Email us</p>
-                  <p className="text-sm font-medium text-text-dark group-hover:text-cyan-accent">
-                    busygrowth@busygrowth.in
-                  </p>
-                </div>
-              </a>
 
               <div className="flex items-start gap-3 rounded-xl border border-border-light bg-linear-to-br from-gold/5 to-amber-50/30 p-3">
                 <div className="rounded-full bg-gold/20 p-2 text-gold">
