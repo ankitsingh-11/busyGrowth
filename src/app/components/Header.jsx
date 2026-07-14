@@ -170,7 +170,7 @@ export const Header = () => {
           {/* Mobile CTA & Hamburger */}
           <div className="flex items-center gap-2 lg:hidden">
             <a
-              href="tel:+919352757834" // Replace with your phone number
+              href="tel:+919079315929" // Replace with your phone number
               className="rounded-full bg-gradient-primary px-3 py-1.5 text-xs font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 shadow-md"
             >
               Call

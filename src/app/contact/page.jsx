@@ -107,10 +107,10 @@ export default function ContactPage() {
                 <p className="text-sm text-text-light">Prefer to reach out directly?</p>
                 <div className="mt-2 flex flex-wrap gap-3">
                   <a 
-                    href="https://wa.me/919352757834" 
+                    href="https://wa.me/919079315929" 
                     className="text-sm font-medium text-green hover:underline"
                   >
-                    📱 +91 93527 57834
+                    📱 +91 9079315929 
                   </a>
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     value={formData.phone} 
                     onChange={handleChange} 
                     className="w-full rounded-xl border border-border-gray bg-white px-4 py-2.5 text-sm text-text-dark placeholder:text-text-muted focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 sm:py-3" 
-                    placeholder="+91 98765 43210" 
+                    placeholder="+91 97239238472" 
                   />
                 </div>
 

@@ -150,7 +150,7 @@ export const Footer = () => {
                 <div>
                   <p className="text-xs text-text-light">WhatsApp us</p>
                   <p className="text-sm font-medium text-text-dark group-hover:text-emerald-accent">
-                    +91 93527 57834
+                    +91 9079315929 
                   </p>
                 </div>
               </a>
