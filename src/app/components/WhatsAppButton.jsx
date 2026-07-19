@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { IoLogoWhatsapp } from "react-icons/io";
 export const WhatsAppButton = () => (
   <motion.a
-    href="https://wa.me/919352757834?text=Hi%20BusyGrowth%2C%20I'm%20interested%20in%20your%20services!"
+    href="https://wa.me/919079315929 ?text=Hi%20BusyGrowth%2C%20I'm%20interested%20in%20your%20services!"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Chat with us on WhatsApp"
